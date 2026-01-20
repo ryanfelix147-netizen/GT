@@ -38,18 +38,18 @@ st.markdown("""
         border: 1px solid #F1F5F9;
     }
     </style>
-""", unsafe_allow_browser=True)
+""", unsafe_allow_html=True)
 
 # --- SISTEMA DE AUTENTICAÇÃO ---
 if 'authenticated' not in st.session_state:
     st.session_state['authenticated'] = False
 
 def login_screen():
-    st.markdown("<h1 style='text-align: center; color: #1E293B; font-weight: 900; font-style: italic;'>TrackingGT</h1>", unsafe_allow_browser=True)
-    st.markdown("<p style='text-align: center; color: #64748B; font-weight: 700; text-transform: uppercase; font-size: 10px; letter-spacing: 0.2em;'>Guatemala Operational Intelligence</p>", unsafe_allow_browser=True)
+    st.markdown("<h1 style='text-align: center; color: #1E293B; font-weight: 900; font-style: italic;'>TrackingGT</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; color: #64748B; font-weight: 700; text-transform: uppercase; font-size: 10px; letter-spacing: 0.2em;'>Guatemala Operational Intelligence</p>", unsafe_allow_html=True)
     
     with st.container():
-        st.markdown('<div class="auth-box">', unsafe_allow_browser=True)
+        st.markdown('<div class="auth-box">', unsafe_allow_html=True)
         st.subheader("🔐 Acesso ao Dashboard")
         
         email = st.text_input("E-mail corporativo")
@@ -65,7 +65,7 @@ def login_screen():
         
         if col2.button("Criar Acesso", use_container_width=True):
             st.info("Funcionalidade de cadastro simulada.")
-        st.markdown('</div>', unsafe_allow_browser=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
 # --- LOGICA PRINCIPAL DO DASHBOARD ---
 if not st.session_state['authenticated']:
@@ -83,7 +83,7 @@ else:
     })
 
     # --- SIDEBAR ---
-    st.sidebar.markdown("<h2 style='font-weight: 900; font-style: italic; color: #2563EB;'>TrackingGT</h2>", unsafe_allow_browser=True)
+    st.sidebar.markdown("<h2 style='font-weight: 900; font-style: italic; color: #2563EB;'>TrackingGT</h2>", unsafe_allow_html=True)
     page = st.sidebar.radio("Navegação", ["📊 Overview Geral", "📦 Performance Produtos", "🎯 Marketing & Ads", "🚚 Logística Droplatam"])
     
     st.sidebar.divider()
