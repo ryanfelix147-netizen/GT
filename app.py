@@ -52,8 +52,16 @@ def login_screen():
         st.markdown('<div class="auth-box">', unsafe_allow_html=True)
         st.subheader("🔐 Acesso ao Dashboard")
         
-        email = st.text_input("E-mail corporativo")
-        password = st.text_input("Sua senha secreta", type="password")
+       # Cria 3 colunas: vazia, conteúdo, vazia
+col_esq, col_meio, col_dir = st.columns([1, 2, 1])
+
+with col_meio:
+    st.markdown("### 🔒 Acesso ao Dashboard")
+    email = st.text_input("E-mail corporativo")
+    password = st.text_input("Sua senha secreta", type="password")
+
+    if st.button("Entrar no Painel", use_container_width=True, type="primary"):
+        # ... lógica do login ...
         
         col1, col2 = st.columns(2)
         if col1.button("Entrar no Painel", use_container_width=True, type="primary"):
